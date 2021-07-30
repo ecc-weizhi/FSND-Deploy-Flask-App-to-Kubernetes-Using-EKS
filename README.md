@@ -36,3 +36,31 @@ Completing the project involves several steps:
 6. Create a CodeBuild stage which will build, test, and deploy your code
 
 For more detail about each of these steps, see the project lesson [here](https://classroom.udacity.com/nanodegrees/nd004/parts/1d842ebf-5b10-4749-9e5e-ef28fe98f173/modules/ac13842f-c841-4c1a-b284-b47899f4613d/lessons/becb2dac-c108-4143-8f6c-11b30413e28d/concepts/092cdb35-28f7-4145-b6e6-6278b8dd7527).
+
+## How to run in container
+```commandline
+# build image and save it as "myimage"
+docker build -t myimage .
+
+# run "myimage" and map port 8080 of container to port 80 of host machine
+docker run --name myContainer --env-file=.env_file -p 80:8080 myimage
+```
+
+## How to clean up container
+```commandline
+# List running containers
+docker container ls
+docker ps -a
+
+# Stop a container
+docker container stop <container_id>
+
+# Remove a container
+docker container rm <container_id>
+
+# Check the list of images
+docker image ls
+
+# Remove any image
+docker image rm <image_id>
+```
