@@ -64,3 +64,12 @@ docker image ls
 # Remove any image
 docker image rm <image_id>
 ```
+
+## How to create cluster
+```commandline
+# create cluster in us-east-2
+eksctl create cluster --name eksctl-demo --region=us-east-2 --profile <profile-name> 
+
+# fetch cluster detail
+eksctl get cluster --name=eksctl-demo --region=us-east-2 --profile <profile-name>
+```
